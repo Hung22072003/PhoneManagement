@@ -11,6 +11,6 @@ namespace PhoneManagement.DTO
         public string UserName { get; set; }
         public string PassWord { get; set; }
         public string DisplayName { get; set; }
-        public bool TypeAccount { get; set; }
+        public int TypeAccount { get; set; }
     }
 }
