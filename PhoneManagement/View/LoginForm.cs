@@ -16,6 +16,7 @@ namespace PhoneManagement.View
         public LoginForm()
         {
             InitializeComponent();
+            this.KeyPreview = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -32,7 +33,7 @@ namespace PhoneManagement.View
                 Txb_Matkhau.Text = "Mật khẩu";
                 Txb_Matkhau.ForeColor = SystemColors.ScrollBar;
             }
-            Txb_Dangnhap.Text = "";
+            if (Txb_Dangnhap.Text == "Tên đăng nhập") Txb_Dangnhap.Text = "";
 
         }
 
@@ -44,7 +45,8 @@ namespace PhoneManagement.View
                 Txb_Dangnhap.ForeColor = SystemColors.ScrollBar;
 
             }
-            Txb_Matkhau.Text = "";
+            if (Txb_Matkhau.Text == "Mật khẩu") Txb_Matkhau.Text = "";
+
         }
 
         private void textdangnhap_TextChanged(object sender, EventArgs e)
@@ -60,21 +62,60 @@ namespace PhoneManagement.View
         private void Btn_Dangnhap_Click(object sender, EventArgs e)
         {
             ManageAccountBLL mal = new ManageAccountBLL();
-            int result = mal.GetTypeAccount(Txb_Dangnhap.Text, Txb_Matkhau.Text);
-            if(result == -1)
+            if ((Txb_Dangnhap.Text == "" || Txb_Dangnhap.Text == "Tên đăng nhập") && (Txb_Matkhau.Text == "" || Txb_Matkhau.Text == "Mật khẩu"))
             {
-                MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                MessageBox.Show("Vui lòng nhập tài khoản và mật khẩu");
+            } 
+            else if ((Txb_Dangnhap.Text == "" || Txb_Dangnhap.Text == "Tên đăng nhập") && (Txb_Matkhau.Text != "" || Txb_Matkhau.Text != "Mật khẩu")) {
+                MessageBox.Show("Vui lòng nhập tài khoản");
             }
-            if(result == 1)
+            else if ((Txb_Dangnhap.Text != "" || Txb_Dangnhap.Text != "Tên đăng nhập") && (Txb_Matkhau.Text == "" || Txb_Matkhau.Text == "Mật khẩu"))
             {
-                User u = new User();
-                u.ShowDialog();
+                MessageBox.Show("Vui lòng nhập mật khẩu");
             }
-            if(result == 0)
+            else
             {
-                Admin ad = new Admin();
-                ad.ShowDialog();
+                int result = mal.GetTypeAccount(Txb_Dangnhap.Text, Txb_Matkhau.Text);
+                   
+                if (result == 1)
+                {
+                    User u = new User();
+                    this.Hide();
+                    u.ShowDialog();
+                    this.Show();
+                }
+                else if (result == 0)
+                {
+                    Admin ad = new Admin();
+                    this.Hide();
+                    ad.ShowDialog();
+                    this.Show();
+                } else
+                {
+                    MessageBox.Show("Tài khoản hoặc mật khẩu không đúng");
+                }
             }
+            
+        }
+
+        private void LoginForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                Btn_Dangnhap_Click(sender, e);
+            }
+        }
+
+        private void pictureBox1_Paint_1(object sender, PaintEventArgs e)
+        {
+            Graphics g = e.Graphics;
+
+            // Tạo Pen để vẽ đường thẳng
+            Pen pen = new Pen(Color.Black, 1);
+
+            // Vẽ đường thẳng từ điểm (10, 10) đến điểm (200, 200)
+            g.DrawLine(pen, 0, 33, 50, 33);
+            g.DrawLine(pen, 100, 33, 150, 33);
         }
     }
 }

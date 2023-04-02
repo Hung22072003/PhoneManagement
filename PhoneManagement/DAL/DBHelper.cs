@@ -18,7 +18,7 @@ namespace PhoneManagement.DAL
             {
                 if (_Instance == null)
                 {
-                    _Instance = new DBHelper("Data Source=DESKTOP-KFGVGP3;Initial Catalog=qlchdt;Integrated Security=True");
+                    _Instance = new DBHelper("Data Source=HUNGPC\\HUNGSQLSERVER;Initial Catalog=QuanLyCuaHangDienThoai;Persist Security Info=True;User ID=hung2207;Password=123");
                 }
                 return _Instance;
             }
