@@ -16,5 +16,21 @@ namespace PhoneManagement.View
         {
             InitializeComponent();
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if (Panel_Profile.Visible)
+            {
+                Panel_Profile.Visible = false;
+            }else
+            {
+                Panel_Profile.Visible = true;
+            }
+        }
+
+        private void User_Click(object sender, EventArgs e)
+        {
+            Panel_Profile.Visible = false;
+        }
     }
 }
