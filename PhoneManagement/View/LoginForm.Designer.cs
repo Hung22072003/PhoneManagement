@@ -57,14 +57,14 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(268, 464);
+            this.panel1.Size = new System.Drawing.Size(268, 483);
             this.panel1.TabIndex = 0;
             this.panel1.TabStop = true;
             // 
             // label2
             // 
             this.label2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label2.Location = new System.Drawing.Point(65, 257);
+            this.label2.Location = new System.Drawing.Point(68, 276);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(200, 3);
             this.label2.TabIndex = 15;
@@ -73,7 +73,7 @@
             // label1
             // 
             this.label1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.label1.Location = new System.Drawing.Point(65, 203);
+            this.label1.Location = new System.Drawing.Point(68, 222);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(200, 3);
             this.label1.TabIndex = 14;
@@ -81,9 +81,9 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pictureBox1.BackgroundImage")));
+            this.pictureBox1.BackgroundImage = global::PhoneManagement.Properties.Resources.user;
             this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.pictureBox1.Location = new System.Drawing.Point(65, 45);
+            this.pictureBox1.Location = new System.Drawing.Point(68, 64);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 79);
             this.pictureBox1.TabIndex = 13;
@@ -95,7 +95,7 @@
             this.Btn_Dangnhap.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.Btn_Dangnhap.Cursor = System.Windows.Forms.Cursors.Hand;
             this.Btn_Dangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btn_Dangnhap.Location = new System.Drawing.Point(108, 313);
+            this.Btn_Dangnhap.Location = new System.Drawing.Point(111, 332);
             this.Btn_Dangnhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Btn_Dangnhap.Name = "Btn_Dangnhap";
             this.Btn_Dangnhap.Size = new System.Drawing.Size(127, 40);
@@ -110,7 +110,7 @@
             this.Txb_Matkhau.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Txb_Matkhau.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txb_Matkhau.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.Txb_Matkhau.Location = new System.Drawing.Point(65, 235);
+            this.Txb_Matkhau.Location = new System.Drawing.Point(68, 254);
             this.Txb_Matkhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Txb_Matkhau.Name = "Txb_Matkhau";
             this.Txb_Matkhau.Size = new System.Drawing.Size(170, 20);
@@ -125,7 +125,7 @@
             this.Txb_Dangnhap.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.Txb_Dangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Txb_Dangnhap.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.Txb_Dangnhap.Location = new System.Drawing.Point(65, 181);
+            this.Txb_Dangnhap.Location = new System.Drawing.Point(68, 200);
             this.Txb_Dangnhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Txb_Dangnhap.Name = "Txb_Dangnhap";
             this.Txb_Dangnhap.Size = new System.Drawing.Size(170, 20);
@@ -160,7 +160,7 @@
             this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(914, 464);
+            this.ClientSize = new System.Drawing.Size(914, 483);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.panel1);
             this.DoubleBuffered = true;

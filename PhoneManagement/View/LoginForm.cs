@@ -23,9 +23,6 @@ namespace PhoneManagement.View
         {
             Application.Exit();
         }
-
-        
-
         private void textdangnhap_Click(object sender, EventArgs e)
         {
             if (Txb_Matkhau.Focused == false && Txb_Matkhau.Text == "")
@@ -77,16 +74,16 @@ namespace PhoneManagement.View
             {
                 int result = mal.GetTypeAccount(Txb_Dangnhap.Text, Txb_Matkhau.Text);
                    
-                if (result == 1)
+                if (result == 0)
                 {
-                    User u = new User();
+                    Admin u = new Admin(Txb_Dangnhap.Text);
                     this.Hide();
                     u.ShowDialog();
                     this.Show();
                 }
-                else if (result == 0)
+                else if (result == 1)
                 {
-                    Admin ad = new Admin();
+                    User ad = new User();
                     this.Hide();
                     ad.ShowDialog();
                     this.Show();

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,6 +23,13 @@ namespace PhoneManagement.BLL
                 }
             }
             return -1;
+        }
+
+        public Account GetAccountByUserName(string UserName)
+        {
+            DBAccountDataContext dba = new DBAccountDataContext();
+            Account a = dba.Accounts.Where(p => p.UserName == UserName).FirstOrDefault();
+            return a;
         }
     }
 }
