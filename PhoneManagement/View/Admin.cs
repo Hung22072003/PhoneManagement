@@ -21,8 +21,6 @@ namespace PhoneManagement.View
             InitializeComponent();
             this.UserName = UserName;
         }
-
-
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             if (Panel_Profile.Visible)

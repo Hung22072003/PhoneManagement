@@ -27,7 +27,7 @@ namespace PhoneManagement.BLL
 
         public Account GetAccountByUserName(string UserName)
         {
-            DBAccountDataContext dba = new DBAccountDataContext();
+            DBPM dba = new DBPM();
             Account a = dba.Accounts.Where(p => p.UserName == UserName).FirstOrDefault();
             return a;
         }

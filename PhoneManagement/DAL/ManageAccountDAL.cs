@@ -32,8 +32,6 @@ namespace PhoneManagement.DAL
                 listAccount.Add(GetAccountByDataRow(i));
             }
             return listAccount;
-
         }
-
     }
 }

@@ -34,9 +34,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -48,17 +57,46 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Account.cs">
+      <DependentUpon>DBPM.tt</DependentUpon>
+    </Compile>
     <Compile Include="BLL\ManageAccountBLL.cs" />
+    <Compile Include="Brand.cs">
+      <DependentUpon>DBPM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>DBPM.tt</DependentUpon>
+    </Compile>
     <Compile Include="DAL\DBHelper.cs" />
     <Compile Include="DAL\ManageAccountDAL.cs" />
-    <Compile Include="DBAccount.designer.cs">
+    <Compile Include="DBPM.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DBAccount.dbml</DependentUpon>
+      <DependentUpon>DBPM.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBPM.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBPM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DBPM.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBPM.edmx</DependentUpon>
     </Compile>
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\CircularPictureBox.cs">
       <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DTO\DTItem.cs" />
+    <Compile Include="Item.cs">
+      <DependentUpon>DBPM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Order.cs">
+      <DependentUpon>DBPM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderDetail.cs">
+      <DependentUpon>DBPM.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +104,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Shift.cs">
+      <DependentUpon>DBPM.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Staff.cs">
+      <DependentUpon>DBPM.tt</DependentUpon>
     </Compile>
     <Compile Include="View\LoginForm.cs">
       <SubType>Form</SubType>
@@ -96,14 +140,17 @@
     <EmbeddedResource Include="View\Admin.resx">
       <DependentUpon>Admin.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DBAccount.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>DBAccount.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
+    <EmbeddedResource Include="View\User.resx">
+      <DependentUpon>User.cs</DependentUpon>
+    </EmbeddedResource>
+    <EntityDeploy Include="DBPM.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>DBPM.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DBPM.edmx.diagram">
+      <DependentUpon>DBPM.edmx</DependentUpon>
     </None>
-    <None Include="DBAccount.dbml.layout">
-      <DependentUpon>DBAccount.dbml</DependentUpon>
-    </None>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -119,6 +166,7 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\avatar1.jpg" />
@@ -149,6 +197,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\user.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DBPM.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>DBPM.Context.cs</LastGenOutput>
+      <DependentUpon>DBPM.edmx</DependentUpon>
+    </Content>
+    <Content Include="DBPM.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>DBPM.edmx</DependentUpon>
+      <LastGenOutput>DBPM.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

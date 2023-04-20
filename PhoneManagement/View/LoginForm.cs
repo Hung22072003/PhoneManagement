@@ -27,6 +27,7 @@ namespace PhoneManagement.View
         {
             if (Txb_Matkhau.Focused == false && Txb_Matkhau.Text == "")
             {
+                Txb_Matkhau.UseSystemPasswordChar = false;
                 Txb_Matkhau.Text = "Mật khẩu";
                 Txb_Matkhau.ForeColor = SystemColors.ScrollBar;
             }
@@ -43,7 +44,6 @@ namespace PhoneManagement.View
 
             }
             if (Txb_Matkhau.Text == "Mật khẩu") Txb_Matkhau.Text = "";
-
         }
 
         private void textdangnhap_TextChanged(object sender, EventArgs e)
@@ -54,6 +54,7 @@ namespace PhoneManagement.View
         private void textMatkhau_TextChanged(object sender, EventArgs e)
         {
             Txb_Matkhau.ForeColor = Color.Black;
+            Txb_Matkhau.UseSystemPasswordChar = true;
         }
 
         private void Btn_Dangnhap_Click(object sender, EventArgs e)
@@ -79,6 +80,8 @@ namespace PhoneManagement.View
                     Admin u = new Admin(Txb_Dangnhap.Text);
                     this.Hide();
                     u.ShowDialog();
+                    Txb_Dangnhap.Clear();
+                    Txb_Matkhau.Clear();
                     this.Show();
                 }
                 else if (result == 1)
@@ -86,6 +89,8 @@ namespace PhoneManagement.View
                     User ad = new User();
                     this.Hide();
                     ad.ShowDialog();
+                    Txb_Dangnhap.Clear();
+                    Txb_Matkhau.Clear();
                     this.Show();
                 } else
                 {
@@ -99,18 +104,22 @@ namespace PhoneManagement.View
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Btn_Dangnhap_Click(sender, e);
+                /*Btn_Dangnhap_Click(sender, e);*/
+                /*if (Txb_Matkhau.Focused)
+                {
+                    if (Txb_Dangnhap.Focused == false && Txb_Dangnhap.Text == "")
+                    {
+                        Txb_Dangnhap.Text = "Tên đăng nhập";
+                        Txb_Dangnhap.ForeColor = SystemColors.ScrollBar;                    }
+                    if (Txb_Matkhau.Text == "Mật khẩu") Txb_Matkhau.Text = "";
+                }*/
             }
         }
 
         private void pictureBox1_Paint_1(object sender, PaintEventArgs e)
         {
             Graphics g = e.Graphics;
-
-            // Tạo Pen để vẽ đường thẳng
             Pen pen = new Pen(Color.Black, 1);
-
-            // Vẽ đường thẳng từ điểm (10, 10) đến điểm (200, 200)
             g.DrawLine(pen, 0, 33, 50, 33);
             g.DrawLine(pen, 100, 33, 150, 33);
         }

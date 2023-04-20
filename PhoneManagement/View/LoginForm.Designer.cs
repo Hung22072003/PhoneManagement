@@ -113,7 +113,7 @@
             this.Txb_Matkhau.Location = new System.Drawing.Point(68, 254);
             this.Txb_Matkhau.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Txb_Matkhau.Name = "Txb_Matkhau";
-            this.Txb_Matkhau.Size = new System.Drawing.Size(170, 20);
+            this.Txb_Matkhau.Size = new System.Drawing.Size(197, 20);
             this.Txb_Matkhau.TabIndex = 2;
             this.Txb_Matkhau.Text = "Mật khẩu";
             this.Txb_Matkhau.Click += new System.EventHandler(this.textMatkhau_Click);
@@ -128,7 +128,7 @@
             this.Txb_Dangnhap.Location = new System.Drawing.Point(68, 200);
             this.Txb_Dangnhap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Txb_Dangnhap.Name = "Txb_Dangnhap";
-            this.Txb_Dangnhap.Size = new System.Drawing.Size(170, 20);
+            this.Txb_Dangnhap.Size = new System.Drawing.Size(197, 20);
             this.Txb_Dangnhap.TabIndex = 1;
             this.Txb_Dangnhap.Text = "Tên đăng nhập";
             this.Txb_Dangnhap.Click += new System.EventHandler(this.textdangnhap_Click);
